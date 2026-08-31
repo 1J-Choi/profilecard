@@ -33,4 +33,25 @@ document.addEventListener('DOMContentLoaded', function(){
       linksContainer.appendChild(a);
     });
   }
+
+  // Theme toggle: initialize from localStorage or prefers-color-scheme
+  const themeToggle = document.getElementById('theme-toggle');
+  function applyTheme(t){
+    document.body.setAttribute('data-theme', t);
+    if(themeToggle) themeToggle.setAttribute('aria-pressed', String(t === 'dark'));
+  }
+
+  const saved = localStorage.getItem('theme');
+  const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const initial = saved || (prefersDark ? 'dark' : 'light');
+  applyTheme(initial);
+
+  if(themeToggle){
+    themeToggle.addEventListener('click', ()=>{
+      const current = document.body.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+      const next = current === 'dark' ? 'light' : 'dark';
+      applyTheme(next);
+      localStorage.setItem('theme', next);
+    });
+  }
 });
