@@ -12,7 +12,7 @@ Gemini로 코드를 생성하고, 여러 단계를 거쳐 직접 수정하며 �
 
 ## 배포 링크
 
-- (여기에 본인의 GitHub Pages 링크를 채워넣으세요)
+- https://1j-choi.github.io/profilecard/
 
 ## 담긴 내용
 
