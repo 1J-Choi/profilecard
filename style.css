@@ -30,3 +30,15 @@ body{margin:0;font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe
 
 /* Make sure content never overflows */
 .card img{max-width:100%;height:auto}
+
+/* Link buttons under profile */
+.links{display:flex;flex-direction:column;gap:10px;margin-top:20px}
+.link-btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 14px;border-radius:12px;background:linear-gradient(90deg,var(--primary),var(--primary-600));color:white;text-decoration:none;font-weight:600;box-shadow:0 6px 18px rgba(10,116,255,0.12);transition:transform .14s ease, box-shadow .14s ease}
+.link-btn:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(10,116,255,0.14)}
+.link-btn:active{transform:translateY(-1px)}
+.link-btn:focus{outline:3px solid rgba(10,116,255,0.12)}
+
+@media (min-width:600px){
+  .links{flex-direction:row}
+  .link-btn{flex:1}
+}
